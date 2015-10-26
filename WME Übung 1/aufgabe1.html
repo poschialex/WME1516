@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="author" content = "Bettina Blasberg, Alexandra Krien"/>
+	<meta name = "description" content="Aufgabe 1 der Übung Web- und Multimedia Engineering" />
+	<meta name="keywords" content="World, Data, world_data, Overview, Country, birth rate, cellphones, children / women, electric usage, internet usage"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<link rel="stylesheet" type="text/css" href="aufgabe1.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	
+	<script src="aufgabe1.js"></script>
+	
+	<title>WME Course Exercise HTML</title>
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<nav>
+				<img id="image" onmouseover = "turnImageToGrey()" onmouseout = "turnImageToColor()" src="world_data_logo_color.png">
+				<ul>
+					<li><div><i class="fa fa-list-ul"></i>A1 - Table</div></li>
+					<li><div><i class="fa fa-list-ul"></i>A2 - Parse</div></li>
+					<li><div><i class="fa fa-list-ul"></i>A2 - Save</div></li>
+					<li><div><i class="fa fa-list-ul"></i>A2 - Print</div></li>
+					<li><div><i class="fa fa-list-ul"></i>A3 - REST</div></li>
+					<li><div><i class="fa fa-list-ul"></i>A4 - Vis</div></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<article>
+			<h1>World Data Overview ...</h1>
+			<p>
+				Mavericks reality distortion gradients attenuation. Thought through and through notifications transparency game center multitasking aluminum advanced desktop operating system genius bar. This changes everything designed by Apple in California passbook. Control center photos all-new design SDK technology clock. Simplicity is actually quite complicated. Functional layers 9:41am partly cloudy minimalism. Dock airdrop slide to answer music. Video multitouch iTunes compass. Harmonious finder grid system retina animation compressor experience keynote.
+
+				Redesign services API notes system preferences. Features siri flat buttons airplane mode calculator. Missed call cover flow compare models. Wi-Fi apple care volume reminder controls. My stations folders mac power ultimate upgrade. Shop online quicktime trackpad server aperture rumors education safari one to one. Remote desktop motion business. Backlit keyboard chess phone airport extreme support iPad. Accessories magsafe terminal final cut pro. Featured TV shows downloads digital color meter. Glossy tech specs bluetooth manuals. OpenGL products FaceTime free shipping recycling mission control applications. from: <a href="http://jonyipsum.com/">jony_ipsum</a>
+			</p>
+		</article>
+		
+		<main>
+			<div class="links">
+				<h4>Show/Hide:</h4>
+				<p onclick = "toggleColumn(3)">birth rate</p><span>|</span>
+				<p onclick = "toggleColumn(4)">cellphones</p><span>|</span>
+				<p onclick = "toggleColumn(5)">children / women</p><span>|</span>
+				<p onclick = "toggleColumn(6)">electric usage</p><span>|</span>
+				<p onclick = "toggleColumn(7)">internet usage</p>
+			</div>
+			
+			<table>
+				<colgroup>
+					<col id="col1">
+					<col id="col2">
+					<col id="col3">
+					<col id="col4">
+					<col id="col5">
+					<col id="col6">
+					<col id="col7">
+				</colgroup>
+				<thead>
+					<th>ID</th>
+					<th>Country <i class="fa fa-angle-up" onclick="sortAscending()" style="cursor: url(black-mouse-pointer.cur), auto;"></i> <i class="fa fa-angle-down" onclick="sortDescending()" style="cursor: url(black-mouse-pointer.cur), auto;"></i></th>
+					<th>birth rate / 1000</th>
+					<th>cellphones / 100</th>
+					<th>children / women</th>
+					<th>electric usage</th>
+					<th>internet usage</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>001</td>
+						<td>Brazil</td>
+						<td>16.405</td>
+						<td>90.01936334</td>
+						<td>1.862</td>
+						<td>2201.808724</td>
+						<td>39.22</td>
+					</tr>
+					<tr>
+						<td>002</td>
+						<td>Canada</td>
+						<td>10.625</td>
+						<td>70.7099724</td>
+						<td>1.668</td>
+						<td>15119.76414</td>
+						<td>80.17096651</td>
+					</tr>
+					<tr>
+						<td>003</td>
+						<td>Chile</td>
+						<td>15.04</td>
+						<td>97.01862561</td>
+						<td>1.873</td>
+						<td>3276.06449</td>
+						<td>38.8</td>
+					</tr>
+					<tr>
+						<td>004</td>
+						<td>China</td>
+						<td>13.56</td>
+						<td>55.97490921</td>
+						<td>1.642</td>
+						<td>2632.724637</td>
+						<td>28.97659939</td>
+					</tr>
+					<tr>
+						<td>005</td>
+						<td>Colombia</td>
+						<td>20.605</td>
+						<td>92.34584564</td>
+						<td>2.405</td>
+						<td>1041.994137</td>
+						<td>30</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<div class="links">
+				<h4>Show/Hide:</h4>
+				<p onclick = "toggleColumn(3)">birth rate</p><span>|</span>
+				<p onclick = "toggleColumn(4)">cellphones</p><span>|</span>
+				<p onclick = "toggleColumn(5)">children / women</p><span>|</span>
+				<p onclick = "toggleColumn(6)">electric usage</p><span>|</span>
+				<p onclick = "toggleColumn(7)">internet usage</p>
+			</div>
+			
+		</main>
+		
+		<footer>
+			<div class="left-wrapper">
+				<p class="left">Copyright &copy; 2015 world_data<br>
+				First course exercise <span>HTML, CSS and JS</span> of the lecture Web and Multimedia Engineering.</p>
+			</div>
+			<div class="right-wrapper">
+				<p class="right">This solution has been created by:<br>
+				Bettina Blasberg(s0598633) And Alexandra Krien(s7419559) - Team 16</p>
+			</div>
+		</footer>
+		
+	</div>
+
+</body>
+
+</html>
