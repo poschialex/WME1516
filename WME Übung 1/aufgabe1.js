@@ -62,12 +62,51 @@ function toggleColumn(colNumber)
 	}
 }
 
-function sortDescending()
+var tablecontent;
+
+function sortTableData(count, dir)
 {
+	var countryNames = new Array();
+	
+	tablecontent = document.getElementById('tableData');
+	
+	for(var i = count - 1; i > 0; --i)
+	{
+		countryNames[i - 1] = tablecontent.rows[i].getElementsByTagName('td')[1].innerHTML;
+	}
+	
+	if (dir == 1) 
+	{
+		countryNames.sort();
+		countryNames.reverse();
+	}
+	
+	if(dir == 0)
+	{
+		countryNames.sort();
+	}		
+	
+	
+	
+	var newTablecontent = tablecontent.cloneNode(true);
+	
+	for (var j = 0; j < countryNames.length; ++j)
+	{
+		for (var k = 1; k < count; ++k)
+		{
+			if(tablecontent.rows[k].getElementsByTagName('td')[1].innerHTML == countryNames[j])
+			{
+				newTablecontent.rows[j + 1].innerHTML = tablecontent.rows[k].innerHTML;
+			}
+		}
+		
+	}
+	
+	for(var l = 0; l < count; ++l)
+	{
+		document.getElementById('tableData').rows[l].innerHTML = newTablecontent.rows[l].innerHTML;
+	}
+	
 	
 }
 
-function sortAscending()
-{
-	turnImageToGrey();
-}

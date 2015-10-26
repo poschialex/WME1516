@@ -50,7 +50,7 @@
 				<p onclick = "toggleColumn(7)">internet usage</p>
 			</div>
 			
-			<table>
+			<table id = "tableData">
 				<colgroup>
 					<col id="col1">
 					<col id="col2">
@@ -62,7 +62,7 @@
 				</colgroup>
 				<thead>
 					<th>ID</th>
-					<th>Country <i class="fa fa-angle-up" onclick="sortAscending()" style="cursor: url(black-mouse-pointer.cur), auto;"></i> <i class="fa fa-angle-down" onclick="sortDescending()" style="cursor: url(black-mouse-pointer.cur), auto;"></i></th>
+					<th>Country <i class="fa fa-angle-up" onclick="sortTableData(tableData.rows.length, 1)" style="cursor: url(black-mouse-pointer.cur), auto;"></i> <i class="fa fa-angle-down" onclick="sortTableData(tableData.rows.length, 0)" style="cursor: url(black-mouse-pointer.cur), auto;"></i></th>
 					<th>birth rate / 1000</th>
 					<th>cellphones / 100</th>
 					<th>children / women</th>
