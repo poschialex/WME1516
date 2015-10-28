@@ -74,12 +74,11 @@ header nav ul
 {
 	padding: 0;
 	margin: auto;
+	margin-top: -5px;
 	float: right;
 	
 	width: inherit;
 	height: 296px;
-	
-	margin-top: 5px;
 	
 	border-top: 1px solid #CCCCCC;
 	border-left: 2px solid #CCCCCC;
@@ -104,7 +103,7 @@ header nav ul li a
 {
 	float: left;
 	margin-left: 10px;
-	margin-top: 10px;
+	margin-top: 15px;
 	text-decoration: none;
 	color: #595959;
 	font-weight: 400;

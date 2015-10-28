@@ -14,21 +14,17 @@ function turnImageToColor()
 }
 
 //Funktion, um das Menü in der mobilen Version zu togglen
-var menu;
-var isClosed = true
-
 function toggleMenu()
 {
-	menu = document.getElementById('menu_links');
-	if(isClosed)
+	var menu = document.getElementById('menu_links')
+	var style = window.getComputedStyle(menu, null);
+	if(style.getPropertyValue("display") == "none")
 	{
 		menu.style.display = "block";
-		isClosed = false;
 	}
-	else if(!isClosed)
+	else if(style.getPropertyValue("display") == "block")
 	{
 		menu.style.display = "none";
-		isClosed = true;
 	}
 }
 
