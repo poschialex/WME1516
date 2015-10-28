@@ -90,3 +90,17 @@ function sortTableData(count, dir)
 	
 	
 }
+
+
+//Funktion, wo Attribute gelöscht werden, wenn sich die breite des Fensters wechselt
+function removeAttributes()
+{
+	var w = window.innerWidth;
+	var menu = document.getElementById('menu_links')
+	var style = window.getComputedStyle(menu, null);
+	if(w > 320 && style.getPropertyValue("display") == "none")
+	{
+		menu.removeAttribute("style");
+	}
+	console.log(style.getPropertyValue("style"));
+}

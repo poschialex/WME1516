@@ -16,12 +16,12 @@
 	<title>WME Course Exercise HTML</title>
 </head>
 
-<body>
+<body onresize="removeAttributes()">
 	<div class="container">
 		<header>
 			<nav>
 				<img id="image" onmouseover = "turnImageToGrey()" onmouseout = "turnImageToColor()" src="world_data_logo_color.png">
-				<a  href="#" class="menu"><i class="fa fa-list-ul" onclick="toggleMenu();"></i></a>
+				<a  href="#" class="menu"><i class="fa fa-list-ul" onclick="toggleMenu()"></i></a>
 				<ul id="menu_links">
 					<li><a  href="#"><i class="fa fa-list-ul"></i>A1 - Table</a></li>
 					<li><a  href="#"><i class="fa fa-list-ul"></i>A2 - Parse</a></li>
