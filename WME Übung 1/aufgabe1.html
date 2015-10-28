@@ -5,6 +5,7 @@
 	<meta name = "description" content="Aufgabe 1 der Übung Web- und Multimedia Engineering" />
 	<meta name="keywords" content="World, Data, world_data, Overview, Country, birth rate, cellphones, children / women, electric usage, internet usage"/>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" type="text/css" href="aufgabe1.css">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
@@ -20,13 +21,14 @@
 		<header>
 			<nav>
 				<img id="image" onmouseover = "turnImageToGrey()" onmouseout = "turnImageToColor()" src="world_data_logo_color.png">
-				<ul>
-					<li><div><i class="fa fa-list-ul"></i>A1 - Table</div></li>
-					<li><div><i class="fa fa-list-ul"></i>A2 - Parse</div></li>
-					<li><div><i class="fa fa-list-ul"></i>A2 - Save</div></li>
-					<li><div><i class="fa fa-list-ul"></i>A2 - Print</div></li>
-					<li><div><i class="fa fa-list-ul"></i>A3 - REST</div></li>
-					<li><div><i class="fa fa-list-ul"></i>A4 - Vis</div></li>
+				<a  href="#" class="menu"><i class="fa fa-list-ul" onclick="toggleMenu();"></i></a>
+				<ul id="menu_links">
+					<li><a  href="#"><i class="fa fa-list-ul"></i>A1 - Table</a></li>
+					<li><a  href="#"><i class="fa fa-list-ul"></i>A2 - Parse</a></li>
+					<li><a  href="#"><i class="fa fa-list-ul"></i>A2 - Save</a></li>
+					<li><a  href="#"><i class="fa fa-list-ul"></i>A2 - Print</a></li>
+					<li><a  href="#"><i class="fa fa-list-ul"></i>A3 - REST</a></li>
+					<li><a  href="#"><i class="fa fa-list-ul"></i>A4 - Vis</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -43,31 +45,33 @@
 		<main>
 			<div class="links">
 				<h4>Show/Hide:</h4>
-				<p onclick = "toggleColumn(3)">birth rate</p><span>|</span>
-				<p onclick = "toggleColumn(4)">cellphones</p><span>|</span>
-				<p onclick = "toggleColumn(5)">children / women</p><span>|</span>
-				<p onclick = "toggleColumn(6)">electric usage</p><span>|</span>
-				<p onclick = "toggleColumn(7)">internet usage</p>
+				<p onclick = "toggleColumn('col3');">birth rate</p><span>|</span>
+				<p onclick = "toggleColumn('col4');">cellphones</p><span>|</span>
+				<p onclick = "toggleColumn('col5');">children / women</p><span>|</span>
+				<p onclick = "toggleColumn('col6');">electric usage</p><span>|</span>
+				<p onclick = "toggleColumn('col7');">internet usage</p>
 			</div>
 			
 			<table id = "tableData">
 				<colgroup>
-					<col id="col1">
-					<col id="col2">
-					<col id="col3">
-					<col id="col4">
-					<col id="col5">
-					<col id="col6">
-					<col id="col7">
+					<col id="col1" class="phone">
+					<col id="col2" class="phone">
+					<col id="col3" class="phone">
+					<col id="col4" class="phone">
+					<col id="col5" class="col-tablet">
+					<col id="col6" class="col-tablet">
+					<col id="col7" class="col-desktop">
 				</colgroup>
 				<thead>
-					<th>ID</th>
-					<th>Country <i class="fa fa-angle-up" onclick="sortTableData(tableData.rows.length, 1)" style="cursor: url(black-mouse-pointer.cur), auto;"></i> <i class="fa fa-angle-down" onclick="sortTableData(tableData.rows.length, 0)" style="cursor: url(black-mouse-pointer.cur), auto;"></i></th>
-					<th>birth rate / 1000</th>
-					<th>cellphones / 100</th>
-					<th>children / women</th>
-					<th>electric usage</th>
-					<th>internet usage</th>
+					<tr>
+						<th>ID</th>
+						<th>Country <i class="fa fa-angle-up" onclick="sortTableData(tableData.rows.length, 1)" style="cursor: url(black-mouse-pointer.cur), auto;"></i> <i class="fa fa-angle-down" onclick="sortTableData(tableData.rows.length, 0)" style="cursor: url(black-mouse-pointer.cur), auto;"></i></th>
+						<th>birth rate / 1000</th>
+						<th>cellphones / 100</th>
+						<th>children / women</th>
+						<th>electric usage</th>
+						<th>internet usage</th>
+					</tr>
 				</thead>
 				<tbody>
 					<tr>
@@ -280,11 +284,11 @@
 			
 			<div class="links">
 				<h4>Show/Hide:</h4>
-				<p onclick = "toggleColumn(3)">birth rate</p><span>|</span>
-				<p onclick = "toggleColumn(4)">cellphones</p><span>|</span>
-				<p onclick = "toggleColumn(5)">children / women</p><span>|</span>
-				<p onclick = "toggleColumn(6)">electric usage</p><span>|</span>
-				<p onclick = "toggleColumn(7)">internet usage</p>
+				<p onclick = "toggleColumn('col3');">birth rate</p><span>|</span>
+				<p onclick = "toggleColumn('col4');">cellphones</p><span>|</span>
+				<p onclick = "toggleColumn('col5');">children / women</p><span>|</span>
+				<p onclick = "toggleColumn('col6');">electric usage</p><span>|</span>
+				<p onclick = "toggleColumn('col7');">internet usage</p>
 			</div>
 			
 		</main>
@@ -296,7 +300,7 @@
 			</div>
 			<div class="right-wrapper">
 				<p class="right">This solution has been created by:<br>
-				Bettina Blasberg(s0598633) And Alexandra Krien(s7419559) - Team 16</p>
+				Bettina Blasberg(s0598633) and Alexandra Krien(s7419559) - Team 16</p>
 			</div>
 		</footer>
 		

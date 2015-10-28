@@ -1,16 +1,436 @@
+* {
+    box-sizing: border-box;
+	-moz-box-sizing: border-box; /*Firefox*/
+}
+
 body, html
 {
 	width: 100%;
-	margin: 0;
+	height: 100%;
+	margin: 0 auto;
 	font-family: "Roboto", sans-serif;
 	font-style: normal;
 	font-size: 14px;
 	line-height: 145%;
 }
 
-a:hover {text-decoration: none} 
+/*Zentrierung aller Elemente außer dem Header*/
+div.container
+{
+	margin: auto;
+	position: absolute;
+	top: 120px;
+	left: 0;
+	right: 0;
+	width: inherit;
+	padding: 0;
+}
 
-/*Alles wird in einer div gepackt, damit es richtig centriert wird*/
+/*Mobile Version nach dem Ansatz "moblie-first"*/
+/*Gestaltung Headers mit Navigation*/
+header
+{
+	margin: auto;
+	width: inherit;
+	height: 80px;
+	background: linear-gradient(#D1D1D1, #E6E6E6);
+	border-top: 0px;
+	border-bottom: 1px solid #CCCCCC;
+	
+	/*Sticky Navigation*/
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;	
+}
+
+/*responisve Design für Navigation*/
+header nav
+{
+	height: 85px;
+	width: inherit;
+	border-bottom: 0;
+}
+
+header nav img
+{
+	display: inline;
+}
+
+header nav a.menu
+{
+	float: right;
+	margin-right: 15px;
+	margin-top: 10px;
+	
+	text-decoration: none;
+	color: #595959;
+	font-weight: 400;
+	cursor: url(black-mouse-pointer.cur), auto;
+}
+
+header nav ul
+{
+	padding: 0;
+	margin: auto;
+	float: right;
+	
+	width: inherit;
+	height: 296px;
+	
+	margin-top: 5px;
+	
+	border-top: 1px solid #CCCCCC;
+	border-left: 2px solid #CCCCCC;
+	border-right: 2px solid #CCCCCC;
+	border-bottom: 2px solid #CCCCCC;
+	
+	background-color: white;
+	display: none;
+}
+
+header nav ul  li
+{	
+	width: inherit;
+	
+	list-style-type: none;
+	margin-bottom: 5px;
+	
+	height: 45px;
+}
+
+header nav ul li a
+{
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+	text-decoration: none;
+	color: #595959;
+	font-weight: 400;
+	cursor: url(black-mouse-pointer.cur), auto;
+}
+
+header nav ul li i
+{
+	margin-right: 5px;
+}
+
+header nav a i
+{
+	cursor: url(black-mouse-pointer.cur), auto;
+}
+
+/*CSS Animation*/
+@-moz-keyframes navHover
+{
+	from{background-color: #E6E6E6;}
+	to{background-color: #D1D1D1;}
+}
+
+header nav ul  li:hover
+{
+	-moz-animation-name: navHover; /*Firefox*/
+	-moz-animation-duration: 4s; /*Firefox*/
+	
+	animation-name: navHover;
+	animation-duration: 4s;
+	
+	background-color: #CCCCCC;
+	
+	cursor: url(black-mouse-pointer.cur), auto;
+}
+
+/*Überschrift mit Text-Box und Spalten*/
+article
+{
+	margin: auto;
+	margin-bottom: 25px;
+	padding: 0;
+	width: inherit;
+}
+
+article h1
+{
+	font-weight: 300;
+	font-size: 30px;
+}
+
+article p
+{
+	border-top: 1px solid #6CC22B;
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	
+	box-shadow: 0px 2px 5px #CCCCCC;
+	
+	background-color: #FCFCFC;
+	
+	font-weight: 400;
+	text-align: justify;
+	
+	-moz-column-count: 1; /* Firefox */
+    column-count: 1;
+	
+	padding: 10px;
+}
+
+article p a
+{
+	color: #6CC22B;
+}
+
+article p a:hover
+{
+	cursor: url(black-mouse-pointer.cur), auto;
+	text-decoration: none;
+}
+
+/*Buttons für die Tabelle*/
+main
+{
+	width: inherit;
+	padding: 0;
+	margin: 0 auto;
+}
+
+main div.links
+{
+	width: inherit;
+	padding: 0;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+main div.links h4
+{
+	color: #595959;
+	margin-right: 5px;
+	display: inline;
+	font-weight: normal;
+}
+
+main div.links p
+{
+	color: #CCCCCC;
+	margin-right: 5px;
+	display: inline;
+	text-decoration: underline;
+}
+
+main div.links p:hover
+{
+	text-decoration: none;
+	cursor: url(black-mouse-pointer.cur), auto;
+}
+
+main div.links span
+{
+	color: #CCCCCC;
+}
+
+/*Tabelle*/
+main table
+{
+	width: inherit;
+	
+	overflow-x: auto;
+	display: block;
+	
+	border-collapse: collapse;
+	border-spacing: 0;
+	
+	margin-bottom: 25px;
+}
+
+.phone
+{
+	visibility: visible;
+}
+
+[class*="col-"]
+{
+	visibility: collapse;
+}
+
+main table th
+{
+	height: 35px;
+	width: inherit;
+	white-space: nowrap;
+	text-align: left;
+	border-bottom: 3.5px solid #CCCCCC;
+}
+
+main table th i
+{
+	color: #6CC22B;
+}
+
+main table tbody tr
+{
+	height: 40px;
+	text-align: left;
+	border-bottom: 1px solid #EEEEEE;
+}
+
+/*Footer*/
+footer
+{
+	border-top: 1px solid #6CC22B;
+	margin-top: 50px;
+	bottom:0;
+	left: 0;
+	right: 0;
+	
+	width: 97.5%;
+}
+
+footer div.left-wrapper
+{
+	text-align: left;
+	width: 50%;
+	float: left;
+	margin: 0 auto;
+}
+
+footer div.right-wrapper
+{
+	text-align: right;
+	width: 50%;
+	float: right;
+	margin: 0 auto;
+
+}
+
+footer p
+{
+	color: #CCCCCC;
+}
+
+@media only screen and (min-width: 768px) {
+    /* Für Tablets */
+	
+	/*Vergrößerte Navigation*/
+	header nav
+	{
+		width: inherit;
+		height: inherit;
+		margin: 0 auto;
+	}
+	
+	header nav a.menu
+	{
+		display: none;
+	}
+	
+	header nav ul
+	{
+		display: inline;
+		width: 80%;
+		height: inherit;
+		margin: 0 auto;
+		padding: 0;
+		border: 0px;
+		background-color: transparent;
+	}
+	
+	header nav ul li
+	{
+		display: table-cell;
+		height: inherit;
+		width: 110px;
+		
+		border-left: 1px solid #CCCCCC;
+		border-right: 1px solid #CCCCCC;
+		
+		text-align: center;
+		padding-left: 5px;
+	}
+	
+	header nav ul li a
+	{
+		text-align: center;
+		margin: 0 auto;
+		margin-left: 5px;
+		margin-top: 40px;
+	}
+	
+	/*Überschrift mit Text-Box und Spalten*/
+	article h1
+	{
+		font-weight: 300;
+		font-size: 40px;
+	}
+	
+	/*Spalten auf 2 gesetzt*/
+	article p
+	{
+		-moz-column-count: 2; /* Firefox*/ 
+		column-count: 2;
+	}
+
+	/*Responsive Design für Tabelle */
+	main table
+	{
+		display: table;
+		
+	}
+	
+	.col-tablet
+	{
+		visibility: visible;
+	}
+	
+}
+
+@media only screen and (min-width: 1200px) {
+	/*Für Laptops*/
+	
+	header
+	{
+		width: 100%;
+	}
+	
+	/*Vergrößerte Navigation*/
+	header nav
+	{
+		width: 1170px;
+		height: inherit;
+		margin: 0 auto;
+	}
+	
+	header nav ul
+	{
+		margin-left: 50px;
+	}
+	
+	div.container
+	{
+		width: 1170px;
+	}
+	
+	article p
+	{
+		-moz-column-count: 3; /* Firefox*/
+		column-count: 3;
+	}
+	
+	.col-desktop
+	{
+		visibility: visible;
+	}
+}
+/*main table #col5, #col6, #col7
+{
+	visibility: collapse;
+}*/
+
+/*
+/*Alles wird in einer div gepackt, damit es richtig zentriert wird
 div.container
 {
 	margin: auto;
@@ -28,7 +448,7 @@ header
 	background: linear-gradient(#CCCCCC, #E6E6E6);
 	border-bottom: 1px solid #CCCCCC;
 	
-	/*Sticky Navigation*/
+	/*Sticky Navigation
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -56,7 +476,7 @@ header ul  li
 	margin: 0 auto;
 }
 
-/*Start der CSS Animation*/
+/*Start der CSS Animation
 @-moz-keyframes navHover
 {
 	from{background-color: #E6E6E6;}
@@ -65,8 +485,8 @@ header ul  li
 
 header nav ul  li div:hover
 {
-	-moz-animation-name: navHover; /*Firefox*/
-	-moz-animation-duration: 4s; /*Firefox*/
+	-moz-animation-name: navHover; /*Firefox
+	-moz-animation-duration: 4s; /*Firefox
 	
 	animation-name: navHover;
 	animation-duration: 4s;
@@ -132,7 +552,7 @@ article p
 	font-weight: 400;
 	text-align: justify;
 	
-	-moz-column-count: 3; /* Firefox */
+	-moz-column-count: 3; /* Firefox 
     column-count: 3;
 	
 	padding: 10px;
@@ -146,6 +566,7 @@ article p a
 article p a:hover
 {
 	cursor: url(black-mouse-pointer.cur), auto;
+	text-decoration: none;
 }
 
 main
@@ -243,6 +664,6 @@ footer p
 {
 	color: #CCCCCC;
 }
-
+*/
 
 
