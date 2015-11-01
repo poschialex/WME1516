@@ -16,7 +16,7 @@ function turnImageToColor()
 //Funktion, um das Menü in der mobilen Version zu togglen
 function toggleMenu()
 {
-	var menu = document.getElementById('menu_links')
+	var menu = document.getElementById('menu_links');
 	var style = window.getComputedStyle(menu, null);
 	if(style.getPropertyValue("display") == "none")
 	{
@@ -31,7 +31,7 @@ function toggleMenu()
 //Funktion für das Erscheinen und Verschwinden der einzelnen Tabellenzeilen
 function toggleColumn(colID)
 {
-	var column = document.getElementById(colID)
+	var column = document.getElementById(colID);
 	var style = window.getComputedStyle(column, null);
 	if(style.getPropertyValue("visibility") == "visible")
 	{
@@ -43,6 +43,8 @@ function toggleColumn(colID)
 	}
 }
 
+
+//Funktion um die Tabelle zu sortieren
 var tablecontent;
 
 function sortTableData(count, dir)
@@ -53,10 +55,10 @@ function sortTableData(count, dir)
 	
 	for(var i = count - 1; i > 0; --i)
 	{
-		countryNames[i - 1] = tablecontent.rows[i].getElementsByTagName('td')[1].innerHTML;
+		countryNames[i - 1] = tablecontent.rows[i].getElementsByTagName('td')[1].innerHTML; //Auslesen der Ländernamen
 	}
 	
-	if (dir == 1) 
+	if (dir == 1) //Sortierung je nach aufsteigend oder absteigend
 	{
 		countryNames.sort();
 		countryNames.reverse();
@@ -67,11 +69,9 @@ function sortTableData(count, dir)
 		countryNames.sort();
 	}		
 	
+	var newTablecontent = tablecontent.cloneNode(true); //Tabelle wird dupliziert
 	
-	
-	var newTablecontent = tablecontent.cloneNode(true);
-	
-	for (var j = 0; j < countryNames.length; ++j)
+	for (var j = 0; j < countryNames.length; ++j) //Suche der den sortierten Ländernamen zugehörigen Tabellenzeilen, Übertragung dieser in die duplizierte Tabelle
 	{
 		for (var k = 1; k < count; ++k)
 		{
@@ -83,7 +83,7 @@ function sortTableData(count, dir)
 		
 	}
 	
-	for(var l = 0; l < count; ++l)
+	for(var l = 0; l < count; ++l) //Übertragung in die sichtbare Tabelle
 	{
 		document.getElementById('tableData').rows[l].innerHTML = newTablecontent.rows[l].innerHTML;
 	}
@@ -96,7 +96,7 @@ function sortTableData(count, dir)
 function removeAttributes()
 {
 	var w = window.innerWidth;
-	var menu = document.getElementById('menu_links')
+	var menu = document.getElementById('menu_links');
 	var style = window.getComputedStyle(menu, null);
 	if(w > 320 && style.getPropertyValue("display") == "none")
 	{
