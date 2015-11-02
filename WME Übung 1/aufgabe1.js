@@ -1,11 +1,11 @@
-//wechselt Bild, wenn Maus darüber geht
+//wechselt Bild von farbig auf grau, wenn Maus darüber geht
 function turnImageToGrey()
 {
 	var image = document.getElementById('image');
-	image.src = "world_data_logo_grey.png";
+	image.src = "world_data_logo_grey.png"; //beide image Dateien sind von derselben Größe, deswegen muss nur die Quelle veräandert
 	image.style.cursor = "url('black-mouse-pointer.cur'), auto";
 }
-
+ //wechselt Bild von grau auf farbig, wenn die Maus nicht mehr darüber ist
 function turnImageToColor()
 {
 	var image = document.getElementById('image');
@@ -17,7 +17,8 @@ function turnImageToColor()
 function toggleMenu()
 {
 	var menu = document.getElementById('menu_links');
-	var style = window.getComputedStyle(menu, null);
+	var style = window.getComputedStyle(menu, null); //Da Javascript und CSS nicht zusammen arbeiten, müssen die Attribute über die Funktionn "window.getComputetStyle(variable, null)" aufgerufen werden
+	
 	if(style.getPropertyValue("display") == "none")
 	{
 		menu.style.display = "block";
@@ -32,7 +33,8 @@ function toggleMenu()
 function toggleColumn(colID)
 {
 	var column = document.getElementById(colID);
-	var style = window.getComputedStyle(column, null);
+	var style = window.getComputedStyle(column, null); 
+	
 	if(style.getPropertyValue("visibility") == "visible")
 	{
 		column.style.visibility = "collapse";
@@ -92,15 +94,15 @@ function sortTableData(count, dir)
 }
 
 
-//Funktion, wo Attribute gelöscht werden, wenn sich die breite des Fensters wechselt
+//Funktion, wo Attribute gelöscht werden, wenn sich die Breite des Fensters wechselt
 function removeAttributes()
 {
 	var w = window.innerWidth;
 	var menu = document.getElementById('menu_links');
-	var style = window.getComputedStyle(menu, null);
+	var style = window.getComputedStyle(menu, null); //das Attribut muss von der CSS Datei manuell aufgerufen, damit sie verändert werden kann
+	
 	if(w > 320 && style.getPropertyValue("display") == "none")
 	{
-		menu.removeAttribute("style");
+		menu.removeAttribute("style"); //Style wird vom Menu entfernt, damit die ganze Navigation gezeigt wird, wenn der Bildschirm größer 320ps ist
 	}
-	console.log(style.getPropertyValue("style"));
 }

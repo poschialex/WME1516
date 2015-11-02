@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<!-- authors-->
 	<meta name="author" content = "Bettina Blasberg, Alexandra Krien"/>
+	<!-- description-->
 	<meta name = "description" content="Aufgabe 1 der Übung Web- und Multimedia Engineering" />
+	<!-- keywords-->
 	<meta name="keywords" content="World, Data, world_data, Overview, Country, birth rate, cellphones, children / women, electric usage, internet usage"/>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+	<!-- Einfügen des CSS-Reset als Stylesheet-->
+	<link rel="stylesheet" type="text/css" href="reset.css">
 	<link rel="stylesheet" type="text/css" href="aufgabe1.css">
+	<!-- Einfügen der Schriftart für die Webseite-->
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+	<!-- Einfügen des Listensymbol-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	
 	<script src="aufgabe1.js"></script>
 	
+	<!-- title-->
 	<title>WME Course Exercise HTML</title>
 </head>
 
 <body onresize="removeAttributes()">
 	<div class="container">
+		<!-- header-->
 		<header>
+			<!-- navigation-->
 			<nav>
 				<img alt = "World Data" id="image" onmouseover = "turnImageToGrey()" onmouseout = "turnImageToColor()" src="world_data_logo_color.png">
 				<a  href="#" class="menu"><i class="fa fa-list-ul" onclick="toggleMenu()"></i></a>
 				<ul id="menu_links">
+					<!-- "Font Awesome" Icon für Menüelemente-->
 					<li><a  href="#"><i class="fa fa-list-ul"></i>A1 - Table</a></li>
 					<li><a  href="#"><i class="fa fa-list-ul"></i>A2 - Parse</a></li>
 					<li><a  href="#"><i class="fa fa-list-ul"></i>A2 - Save</a></li>
@@ -62,9 +73,11 @@
 					<col id="col6" class="col-tablet">
 					<col id="col7" class="col-desktop">
 				</colgroup>
+				<!-- thead -->
 				<thead>
 					<tr>
 						<th>ID</th>
+						<!-- "Font Awesome" Icons fr Spalte Country-->
 						<th>Country <i class="fa fa-angle-up" onclick="sortTableData(tableData.rows.length, 1)" style="cursor: url(black-mouse-pointer.cur), auto;"></i> <i class="fa fa-angle-down" onclick="sortTableData(tableData.rows.length, 0)" style="cursor: url(black-mouse-pointer.cur), auto;"></i></th>
 						<th>birth rate / 1000</th>
 						<th>cellphones / 100</th>
@@ -73,6 +86,7 @@
 						<th>internet usage</th>
 					</tr>
 				</thead>
+				<!-- tbody-->
 				<tbody>
 					<tr>
 						<td>001</td>
@@ -293,6 +307,7 @@
 			
 		</main>
 		
+		<!-- footer-->
 		<footer>
 			<div class="left-wrapper">
 				<p class="left">Copyright &copy; 2015 world_data<br>

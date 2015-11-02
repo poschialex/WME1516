@@ -1,3 +1,5 @@
+/*Padding und Border beeinflussen nicht mehr die Größen*/
+/*der Elemente*/
 * {
     box-sizing: border-box;
 	-moz-box-sizing: border-box; /*Firefox*/
@@ -8,13 +10,15 @@ body, html
 	width: 100%;
 	height: 100%;
 	margin: 0 auto;
+	/*Einstellung der Basisschrift Roboto*/
 	font-family: "Roboto", sans-serif;
 	font-style: normal;
 	font-size: 14px;
 	line-height: 145%;
 }
 
-/*Zentrierung aller Elemente außer dem Header*/
+/*Zentrierung aller Elemente außer dem Header,*/ 
+/*da der Header die ganze Breite vom Bildschirm übernimmt*/
 div.container
 {
 	margin: auto;
@@ -27,12 +31,14 @@ div.container
 }
 
 /*Mobile Version nach dem Ansatz "moblie-first"*/
+/*Erster Breakpoint und gilt für alle Bildschirme, die <= 320px breit sind*/
 /*Gestaltung Headers mit Navigation*/
 header
 {
 	margin: auto;
 	width: inherit;
 	height: 80px;
+	/*Farbgradient*/
 	background: linear-gradient(#D1D1D1, #E6E6E6);
 	border-top: 0px;
 	border-bottom: 1px solid #CCCCCC;
@@ -58,6 +64,8 @@ header nav img
 	display: inline;
 }
 
+/*a.menu bestimmt bei der mobilen Version*/
+/*das Toggeln der Navigation*/
 header nav a.menu
 {
 	float: right;
@@ -120,13 +128,14 @@ header nav a i
 	cursor: url(black-mouse-pointer.cur), auto;
 }
 
-/*CSS Animation*/
+/*CSS Animation beim Hover der einzelnen Elemente der Liste*/
 @-moz-keyframes navHover
 {
 	from{background-color: #E6E6E6;}
 	to{background-color: #D1D1D1;}
 }
 
+/*Hier wird die Animation eingezetzt*/
 header nav ul  li:hover
 {
 	-moz-animation-name: navHover; /*Firefox*/
@@ -171,9 +180,11 @@ article p
 	font-weight: 400;
 	text-align: justify;
 	
+	/*Teilt den Text in Spalten auf*/
 	-moz-column-count: 1; /* Firefox */
     column-count: 1;
 	
+	margin-top: 35px;
 	padding: 10px;
 }
 
@@ -245,15 +256,18 @@ main table
 	margin-bottom: 25px;
 }
 
+/*Spalten, die die Klasse ".phone" enthalten, werden angezeigt*/
 .phone
 {
 	visibility: visible;
 }
 
+/*Alle anderen werden versteckt*/
 [class*="col-"]
 {
 	visibility: collapse;
 }
+
 
 main table th
 {
@@ -274,6 +288,11 @@ main table tbody tr
 	height: 40px;
 	text-align: left;
 	border-bottom: 1px solid #EEEEEE;
+}
+
+main table tbody tr td
+{
+	vertical-align: middle;
 }
 
 /*Footer*/
@@ -310,8 +329,9 @@ footer p
 	color: #CCCCCC;
 }
 
+/*Zweiter Breakpoint für alle Bildschirme, die >= 768px sind*/
+/* Für Tablets */
 @media only screen and (min-width: 768px) {
-    /* Für Tablets */
 	
 	/*Vergrößerte Navigation*/
 	header nav
@@ -372,13 +392,14 @@ footer p
 		column-count: 2;
 	}
 
-	/*Responsive Design für Tabelle */
+	/*Tabelle wird ab dieser Größer wieder als Tabelle angezeigt und nicht als Block */
 	main table
 	{
 		display: table;
 		
 	}
 	
+	/*weiter Spalten werden angezeigt*/
 	.col-tablet
 	{
 		visibility: visible;
@@ -386,9 +407,11 @@ footer p
 	
 }
 
+/*Dritter Breakpoint für alle Bildschirme, die >= 1200px breit sind*/
+/*Für Laptops*/
 @media only screen and (min-width: 1200px) {
-	/*Für Laptops*/
 	
+	/*Der Header übernimmt die ganze Breite des Bildschirms*/
 	header
 	{
 		width: 100%;
@@ -419,6 +442,7 @@ footer p
 		column-count: 3;
 	}
 	
+	/*alle Spalten der Tabelle werden angezeigt*/
 	.col-desktop
 	{
 		visibility: visible;
