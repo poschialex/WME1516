@@ -53,6 +53,25 @@ class WorldDataParser
 			return TRUE;
 		
 	}
+	
+	function printXML($xmlPath, $xsltPath)
+	{
+		// Load the XML source
+		$xml = new DOMDocument;
+		$xml->load($xmlPath);
+
+		$xsl = new DOMDocument;
+		$xsl->load($xsltPath);
+
+		// Configure the transformer
+		$proc = new XSLTProcessor;
+		$proc->importStyleSheet($xsl); // attach the xsl rules
+		
+		$file = $proc->transformToDoc($xml);
+
+		return $file->saveHTML();
+
+	}
 
 }
 ?>
