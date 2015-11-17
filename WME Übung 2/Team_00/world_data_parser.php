@@ -81,9 +81,9 @@ class WorldDataParser
 		$proc = new XSLTProcessor;
 		$proc->importStyleSheet($xsl); // attach the xsl rules
 		
-		$file = $proc->transformToDoc($xml);
+		$file = $proc->transformToDoc($xml);//transform xml to doc
 
-		return $file->saveHTML();
+		return $file->saveHTML();//return as html doc
 
 	}
 
