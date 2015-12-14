@@ -19,10 +19,34 @@ app.use( express.static( path.join(__dirname, "public") ) );
 /**************************************************************************
 ****************************** csv2json *********************************
 **************************************************************************/
+var fs = require('fs');
 
+var csvConverter=new Converter({constructResult:false, toArrayString:true});
+
+fs.createReadStream('world_data.csv')
+  .pipe(csvConverter)
+  .pipe(fs.createWriteStream('data.json'));
 /**************************************************************************
 ********************** handle HTTP METHODS ***********************
 **************************************************************************/
+
+//GET
+app.get('/items', function (req, res){
+	fs.readFile("data.json", 'utf8', function (err, data) {
+		console.log(data);
+		res.end (data);
+	});
+})
+
+app.get('/items/:id', function (req, res){
+	fs.readFile("data.json", 'utf8', function (err, data) {
+	   
+	});
+})
+
+//POST
+
+//DELETE
 
 
 // DO NOT CHANGE!
